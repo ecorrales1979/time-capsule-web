@@ -40,8 +40,20 @@ export default function Home() {
           </a>
         </div>
 
-        <div className="flex">Feito com 💜 no NLW da Rocketseat</div>
+        {/* Copyright */}
+        <div className="text-sm leading-relaxed text-gray-200">
+          Feito com 💜 no NLW da{' '}
+          <a
+            href="http://rocketseat.com.br"
+            className="underline hover:text-gray-100"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Rocketseat
+          </a>
+        </div>
       </div>
+
       {/* Right Section */}
       <div className="flex flex-col bg-[url(../assets/bg-stars.svg)] bg-cover p-16">
         <div className="flex flex-1 items-center justify-center">
