@@ -1,3 +1,5 @@
+import { User } from 'lucide-react';
+
 export default function Home() {
   return (
     <main className="grid grid-cols-2 min-h-screen">
@@ -9,13 +11,23 @@ export default function Home() {
         {/* Stripes */}
         <div className="absolute right-2 top-0 bottom-0 w-2 bg-stripes"></div>
 
-        <div className="flex flex-1 flex-col items-start justify-between">
-          <div className="flex">Crie sua conta e salve suas memórias!</div>
+        {/* Sign in section */}
+        <a href="" className="flex items-center gap-3 text-left hover:text-gray-50 transition-colors">
+          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-400">
+            <User className="h-5 w-5 text-gray-500" />
+          </div>
+          <div className="text-sm leading-snug max-w-[140px]">
+            <span className="underline">Crie sua conta</span> e salve suas memórias!
+          </div>
+        </a>
+        
+        {/* Hero section */}
           <div className="flex">
             <p className="font-bold text-[40px]">Sua cápsula do tempo</p>
           </div>
+          
           <div className="flex">Feito com 💜 no NLW da Rocketseat</div>
-        </div>
+        
       </div>
       {/* Right Section */}
       <div className="flex flex-col p-16 bg-[url(../assets/bg-stars.svg)] bg-cover">
