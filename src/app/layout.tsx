@@ -1,5 +1,4 @@
 import { ReactNode } from 'react'
-import { cookies } from 'next/headers'
 import {
   Roboto_Flex as Roboto,
   Bai_Jamjuree as BaiJamjuree,
@@ -10,7 +9,7 @@ import Copyright from '@/components/Copyright'
 import Hero from '@/components/Hero'
 import Profile from '@/components/Profile'
 import SignIn from '@/components/SignIn'
-import { cookieTokenName } from '@/definitions'
+import { isAuthenticated } from '@/lib/auth'
 
 const roboto = Roboto({ subsets: ['latin'], variable: '--font-roboto' })
 const baijamjuree = BaiJamjuree({
@@ -26,8 +25,6 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }: { children: ReactNode }) {
-  const isAuthenticated = cookies().has(cookieTokenName)
-
   return (
     <html lang="en">
       <body
@@ -42,7 +39,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             {/* Stripes */}
             <div className="absolute bottom-0 right-2 top-0 w-2 bg-stripes"></div>
 
-            {isAuthenticated ? <Profile /> : <SignIn />}
+            {isAuthenticated() ? <Profile /> : <SignIn />}
 
             <Hero />
 

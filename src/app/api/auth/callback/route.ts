@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
-import { cookieTokenName } from "@/definitions";
 import { api } from "@/lib/api";
+import { cookieTokenName } from "@/lib/auth";
 
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);

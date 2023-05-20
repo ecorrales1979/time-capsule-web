@@ -1,13 +1,13 @@
 import { cookies } from "next/headers";
 import decode from "jwt-decode";
 
-import { cookieTokenName } from "@/definitions";
-
 interface User {
   sub: string;
   name: string;
   avatarUrl: string;
 }
+
+export const cookieTokenName = "spacetime-token";
 
 export function getUser(): User {
   const token = cookies().get(cookieTokenName)?.value;
@@ -19,4 +19,8 @@ export function getUser(): User {
   const user = decode<User>(token);
 
   return user;
+}
+
+export function isAuthenticated(): boolean {
+  return cookies().has(cookieTokenName);
 }
