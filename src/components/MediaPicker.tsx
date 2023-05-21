@@ -19,6 +19,7 @@ export default function MediaPicker() {
       <input
         type="file"
         id="media"
+        name="coverUrl"
         onChange={onFileSelected}
         accept="image/*"
         className="invisible h-0 w-0"

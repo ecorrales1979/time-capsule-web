@@ -37,3 +37,9 @@ export function isAuthenticated(
   const cookies = getCookies();
   return cookies().has(cookieTokenName);
 }
+
+export async function getToken() {
+  const cookies = getCookies();
+  const token = cookies().get(cookieTokenName)?.value;
+  return token;
+}
